@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+a.active {
+  background: yellow;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 0;
+}
+
+.flying-img {
+  position: absolute;
+  animation: fly_to_cart 1s ease-in-out;
+}
+
+@keyframes fly_to_cart {
+  0% {
+    left: 0;
+    top: 0;
+  }
+  45%,
+  50% {
+    left: var(--left);
+    top: 60px;
+  }
+  80%,
+  90% {
+    left: var(--left);
+    top: var(--top);
+    transform: scale(0.2);
+  }
+  100% {
+    left: calc(var(--left) + 40px);
+    top: var(--top);
+    transform: scale(0.2);
+  }
+}
